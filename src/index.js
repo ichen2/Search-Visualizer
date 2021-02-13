@@ -3,12 +3,10 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { SearchVisualizer } from './SearchVisualizer/SearchVisualizer';
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
-    <SearchVisualizer />
   </React.StrictMode>,
   document.getElementById('root')
 );
