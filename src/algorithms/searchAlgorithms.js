@@ -5,16 +5,16 @@ export function bfs(nodes, start, end) {
     while(visitedNodes[index].length > 0 && index < 50) {
         let currentNodes = visitedNodes[index];
         let neighborNodes = [];
-        currentNodes.forEach((node) => {
+        for(let i = 0; i < currentNodes.length; i++) {
+            let node = currentNodes[i];
             if(!node.isVisited) {
                 node.isVisited = true;
                 if(node.row === end.row && node.col === end.col) {
-                    visitedNodes.push(neighborNodes);
                     return visitedNodes;
                 }
                 neighborNodes = neighborNodes.concat(getNeighbors(grid, node));
             }
-        })
+        }
         visitedNodes.push(neighborNodes); 
         index++;
     }

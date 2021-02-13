@@ -1,4 +1,32 @@
 #grid {
-    display: table;
-    margin: auto;
+  display: table;
+  margin: auto;
+}
+#header {
+  background-color: black;
+  text-align: center;
+  padding: 20px 10%;
+  margin-bottom: 20px;
+}
+#title {
+  color: white;
+  font-size: 40px;
+  vertical-align: bottom;
+  font-weight: 700;
+  margin: 0 20px;
+}
+.search-btn {
+  background-color: white;
+  border: none;
+  font-size: 20px;
+  padding: 10px;
+  margin: 10px 20px;
+  border-radius: 5px;
+}
+.search-btn:hover {
+  cursor: pointer;
+}
+.search-btn:focus {
+  background-color: #f7fbff;
+  outline: none;
 }

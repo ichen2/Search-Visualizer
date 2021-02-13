@@ -1,15 +1,15 @@
 .node {
   display: table-cell;
   border: 1px solid black;
-  width: 2vw;
-  height: 2vw;
+  width: 25px;
+  height: 25px;
 }
 .start {
-  background: lightblue;
+  background: black;
 }
 .end {
   background: darkblue;
 }
 .visited {
-  background: blue;
+  background: lightblue;
 }

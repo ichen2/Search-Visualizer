@@ -12,12 +12,16 @@ export class SearchVisualizer extends Component {
         this.state = {
             nodes: [], 
             startNode: {x: 10, y: 10},
-            endNode: {x: 30, y: 10}
+            endNode: {x: 30, y: 15}
         };
         this.visualizeBFS = this.visualizeBFS.bind(this);
         this.animateBFS = this.animateBFS.bind(this);
+        this.initializeGrid = this.initializeGrid.bind(this);
     }
     componentDidMount() {
+        this.initializeGrid()
+    }
+    initializeGrid() {
         let {x: startX, y: startY} = this.state.startNode;
         let {x: endX, y: endY} = this.state.endNode;
         const nodes = [];
@@ -60,20 +64,25 @@ export class SearchVisualizer extends Component {
     render() {
         let {nodes} = this.state;
         return (
-            <div id="grid">
-                <button onClick={this.visualizeBFS}>Click Me</button>
-                {nodes.map((row, rowIndex) => {
-                    return <div className="row" key={rowIndex}>
-                        {row.map((node, nodeIndex) => 
-                            <Node 
-                                key={nodeIndex}
-                                isStart={node.isStart}
-                                isEnd={node.isEnd}
-                                isVisited={node.isVisited}
-                            />
-                        )}
-                    </div>
-                })}
+            <div>
+                <div id="header">
+                    <span id="title">Search Visualizer</span>
+                    <button className="search-btn" onClick={this.visualizeBFS}>Breadth-First Search</button>
+                </div>
+                <div id="grid">
+                    {nodes.map((row, rowIndex) => {
+                        return <div className="row" key={rowIndex}>
+                            {row.map((node, nodeIndex) => 
+                                <Node 
+                                    key={nodeIndex}
+                                    isStart={node.isStart}
+                                    isEnd={node.isEnd}
+                                    isVisited={node.isVisited}
+                                />
+                            )}
+                        </div>
+                    })}
+                </div>
             </div>
         );
     }
