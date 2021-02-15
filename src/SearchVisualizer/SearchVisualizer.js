@@ -42,11 +42,11 @@ export class SearchVisualizer extends Component {
         this.setState({nodes});
     }
     animateBFS(orderedVisitedNodes) {
-        console.log(orderedVisitedNodes);
         for(let i = 0; i < orderedVisitedNodes.length; i++) {
             setTimeout(() => {
                 const newGrid = this.state.nodes.slice();
                 orderedVisitedNodes[i].forEach((node) => {
+                    //console.log(node);  
                     const newNode = {...node, isVisited: true};
                     newGrid[node.row][node.col] = newNode;
                 });
@@ -63,6 +63,7 @@ export class SearchVisualizer extends Component {
     }
     render() {
         let {nodes} = this.state;
+        console.log(nodes[15]);
         return (
             <div>
                 <div id="header">

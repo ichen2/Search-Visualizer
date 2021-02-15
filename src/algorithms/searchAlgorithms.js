@@ -2,7 +2,7 @@ export function bfs(nodes, start, end) {
     let grid = copyGrid(nodes);
     let visitedNodes = [[grid[start.row][start.col]]];
     let index = 0;
-    while(visitedNodes[index].length > 0 && index < 50) {
+    while(visitedNodes[index].length > 0) {
         let currentNodes = visitedNodes[index];
         let neighborNodes = [];
         for(let i = 0; i < currentNodes.length; i++) {

@@ -10,6 +10,30 @@
 .end {
   background: darkblue;
 }
-.visited {
-  background: lightblue;
+@keyframes visited-transition {
+  from {
+    background-color: white;
+  }
+  to {
+    background-color: lightblue;
+  }
+}
+.visited:not(.end):not(.start) {
+  animation-name: visited-transition;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+}
+@keyframes end-visited-transition {
+  from {
+    background-color: darkblue;
+  }
+  to {
+    background-color: green;
+  }
+}
+.end.visited {
+  animation-name: end-visited-transition;
+  animation-delay: 0.8s;
+  animation-duration: 0s;
+  animation-fill-mode: forwards;
 }
