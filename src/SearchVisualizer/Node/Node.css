@@ -24,16 +24,21 @@
   animation-fill-mode: forwards;
 }
 @keyframes end-visited-transition {
-  from {
-    background-color: darkblue;
-  }
-  to {
+  0% {
     background-color: green;
+  }
+  50% {
+    background-color: green;
+    transform: scale(1.1);
+  }
+  100% {
+    background-color: green;
+    transform: scale(1);
   }
 }
 .end.visited {
   animation-name: end-visited-transition;
-  animation-delay: 0.8s;
-  animation-duration: 0s;
+  animation-delay: 0.4s;
+  animation-duration: 0.4s;
   animation-fill-mode: forwards;
 }
