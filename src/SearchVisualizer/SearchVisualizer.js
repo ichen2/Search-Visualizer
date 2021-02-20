@@ -52,7 +52,7 @@ export class SearchVisualizer extends Component {
                     newGrid[node.row][node.col] = newNode;
                     this.setState({nodes: newGrid});
                     if(i === orderedVisitedNodes.length - 1) { this.setState({animating: false}); }
-                }, 10 * i);
+                }, 100 * i);
             });
         }
     }

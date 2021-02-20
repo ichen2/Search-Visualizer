@@ -1,3 +1,5 @@
+View this project [here](https://ichen2.github.io/search-visualizer/)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
