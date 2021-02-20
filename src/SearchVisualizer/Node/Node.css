@@ -12,7 +12,7 @@
 }
 @keyframes visited-transition {
   from {
-    background-color: white;
+    background-color: darkblue;
   }
   to {
     background-color: lightblue;
@@ -25,11 +25,11 @@
 }
 @keyframes end-visited-transition {
   0% {
-    background-color: green;
+    background-color: darkblue;
   }
   50% {
     background-color: green;
-    transform: scale(1.1);
+    transform: scale(1.3);
   }
   100% {
     background-color: green;
@@ -39,6 +39,6 @@
 .end.visited {
   animation-name: end-visited-transition;
   animation-delay: 0.4s;
-  animation-duration: 0.4s;
+  animation-duration: 0.3s;
   animation-fill-mode: forwards;
 }

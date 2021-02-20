@@ -10,6 +10,9 @@ export function bfs(nodes, start, end) {
             if(!node.isVisited) {
                 node.isVisited = true;
                 if(node.row === end.row && node.col === end.col) {
+                    console.log(visitedNodes[index]);
+                    visitedNodes[index] = visitedNodes[index].slice(0, i+1);
+                    console.log(visitedNodes[index]);
                     return visitedNodes;
                 }
                 neighborNodes = neighborNodes.concat(getNeighbors(grid, node));
@@ -17,6 +20,25 @@ export function bfs(nodes, start, end) {
         }
         visitedNodes.push(neighborNodes); 
         index++;
+    }
+    return visitedNodes;
+}
+
+export function dfs(nodes, start, end) {
+    let grid = copyGrid(nodes);
+    let visitedNodes = [grid[start.row][start.col]];
+    let stack = [grid[start.row][start.col]];
+    while(stack.length > 0) {   
+        let currentNode = stack.pop();
+        if(!currentNode.isVisted) {
+            currentNode.isVisited = true;
+            visitedNodes.push(currentNode);
+            if(currentNode.row === end.row && currentNode.col === end.col) {
+                return visitedNodes;
+            }
+            let neighborNodes = getNeighbors(grid, currentNode);
+            neighborNodes.forEach((node) => stack.push(node));
+        }
     }
     return visitedNodes;
 }
@@ -42,11 +64,11 @@ function getNeighbors(grid, node) {
     if(row < grid.length -1) {
         neighbors.push(grid[node.row+1][node.col]);
     }
-    if(row > 0) {
-        neighbors.push(grid[node.row-1][node.col]);
-    }
     if(col < grid[0].length - 1) {
         neighbors.push(grid[node.row][node.col+1]);
+    }
+    if(row > 0) {
+        neighbors.push(grid[node.row-1][node.col]);
     }
     if(col > 0) {
         neighbors.push(grid[node.row][node.col-1]);
